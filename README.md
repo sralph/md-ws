@@ -24,12 +24,13 @@ A list of [show commands](#show-commands) is also provided in this guide.
 
 A summary of what this guide provides is shown below.
 
-![image](./images/guide-summary.jpg)
+
 
 Disclaimer: This is not an exhaustive list of all the features and associated options on SR OS for services. This does not replace official documentation but is a one stop reference guide for basic service configuration. For more details on the features and options, please refer to the documentation links in each section.
 
 # Topology
 
+This is the topology used for the lab exercised
 
 <img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/0ea3df5e-d841-45b9-9701-c57a3695194f" />
 
