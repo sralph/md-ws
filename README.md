@@ -29,7 +29,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
       ```
       clab deploy -t 7750-SR1.yml
 
-   5) You should the follow:
+   5) Once the lab is finished being deployed you can issue the following command if it does not already display.
       ```
       clab inspect -a
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
