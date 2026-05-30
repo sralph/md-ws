@@ -1,7 +1,7 @@
 # md-ws
-# SR OS Service Configuration Quick Reference Guide
+#Nokia Workshop
 
-This page provides the basic step-by-step configuration required to set up services on a Nokia 7750 Service Router. Minimum required feature sets for each service type are covered here with configuration and show examples. Most sections also provide links to Nokia documentation for further reading.
+This page provides the basic step-by-step configuration required to configure the 7750 SR-1 Router.
 
 | Contributors | Handle |
 |---|---|
