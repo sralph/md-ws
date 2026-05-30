@@ -63,7 +63,8 @@ Disclaimer: This is not an exhaustive list of all the features and associated op
 
 This is the topology used for the lab exercise.
 
-<img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/0ea3df5e-d841-45b9-9701-c57a3695194f" />
+<img width="1486" height="224" alt="Topology" src="https://github.com/user-attachments/assets/c38d9e5f-9b35-401d-96da-b488d90e3325" />
+
 
 
 We will be using the below topology with 4 Provider Edge (PE) routers, 2 Provider (P) routers and 4 Customer Edge (CE) routers.
