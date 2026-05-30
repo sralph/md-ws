@@ -102,6 +102,7 @@ commit
 
 ```
 info flat
+
 ```
 
 5) You should see output similar to below:
