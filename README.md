@@ -47,9 +47,9 @@ The following Subjects are covered in this lab:
 - [BOF Configuration](#Epipe)
 - [Card and MDA Configuration](#VPLS)
 - [Port Configuration](#VPRN)
-- [IES](#IES)
-- [EVPN-VPWS](#EVPN-VPWS)
-- [EVPN-MPLS](#EVPN-MPLS-with-Multihoming)
+- [Router Base Interface](#IES)
+- [ISIS ](#EVPN-VPWS)
+- [BGP](#EVPN-MPLS-with-Multihoming)
 
 A list of [show commands](#show-commands) is also provided in this guide.
 
