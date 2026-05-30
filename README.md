@@ -67,11 +67,7 @@ This is the topology used for the lab exercise.
 
 
 
-We will be using the below topology with 4 Provider Edge (PE) routers, 2 Provider (P) routers and 4 Customer Edge (CE) routers.
 
-All configuration examples shown below are for PE routers. Refer to the startup config files for configuration on other routers.
-
-<img src="./images/physical-topology.svg" width="100%"/>
 
 IPv4 Addressing:
 
@@ -79,12 +75,38 @@ IPv4 Addressing:
 
 
 
-# SR-SIM image
+# Lab 1- BOF File
+1) Log into the Router PE20 with username admin password NokiaSros1!
 
-The containerlab topology uses a SR-SIM native container image. Follow the instructions in [SR-SIM Guide](https://documentation.nokia.com/sr/25-7/7750-sr/titles/sr-sim-installation-setup.html) to load the image to your docker environment.
+```
+ssh admin@pe20
+ ```
 
-Contact your Account team to obtain a SR-SIM license.
+2) At the prompt enter bof configuration mode.
 
+```bash
+bof private
+```
+
+
+3) Enter the DNS information.
+
+```bash
+dns primary-server 8.8.8.8
+commit
+
+ ```                      
+4) Check to make the BOF file has been updated0
+
+```
+info flat
+```
+
+5) You should see output similar to below:
+<img width="813" height="231" alt="image" src="https://github.com/user-attachments/assets/01d5577c-7bb0-4c8a-9807-ab85ee9cb04a" />
+
+6) Repeat the steps for PE30.
+   
 # Deploying the lab
 
 Clone this repo to your local environment:
