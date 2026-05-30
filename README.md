@@ -40,7 +40,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
       ssh admin@pe20
       
                                                            
-   
+   # Workshop Lab
 
 The following Subjects are covered in this lab:
 
