@@ -110,28 +110,106 @@ info flat
 
 6) Repeat the steps for PE30.
    
-# Deploying the lab
+# Lab 2 Provisioning the Cards and MDA
 
-Clone this repo to your local environment:
-
-```
-git clone https://github.com/sajusal/sros-docs-lab.git
-```
-
-Navigate to the directory for this lab:
+1) On PE20 issue the commands to display the state of the cards and MDA.
 
 ```
-cd service_config_qrg
-```
-
-Ensure SR-SIM license is copied.
-
-Deploy the lab:
+show card
+show mda
 
 ```
-clab dep
+You show get a similar output
+<img width="926" height="539" alt="image" src="https://github.com/user-attachments/assets/f821229b-a8cf-406e-bc46-ca93320a07cf" />
+
+* Please note that because this is an SR-SIM the IOM is provisioned automatically.
+
+2)   Configure the IOM ( already configured)
+   ```
+/configure card 1 card-type iom-1
+/configure card 1 level he
+commit
+
 ```
 
+3) Show that the card is now up.
+
+   <img width="775" height="243" alt="image" src="https://github.com/user-attachments/assets/4fa2568b-85f3-4e62-a257-1e318751b9ce" />
+
+4) View the port status
+
+   ```
+   show port
+   ```
+   You will notice that only the CPM is up.
+
+   <img width="901" height="306" alt="image" src="https://github.com/user-attachments/assets/2c7f81e7-50ad-46b4-a094-9afdbcf900db" />
+
+
+5) Provision both the 16 port MACSEC with 2 QSFP28 ports and the 6 port QSFP28 MDAs.
+
+```
+  /configure card 1 mda 1 mda-type me16-25gb-sfp28+2-100gb-qsfp-b
+  /configure card 1 mda 2 mda-type me6-100gb-qsfp28
+   commit
+   
+```
+6) You should now see the MDA up.
+   <img width="807" height="194" alt="image" src="https://github.com/user-attachments/assets/dcd53444-13ae-40ca-871a-acc8738a42a1" />
+
+ 7) The ports can now be viewed.
+      <img width="733" height="667" alt="image" src="https://github.com/user-attachments/assets/64314dad-34d5-447a-bb99-6d4c22dffc8a" />
+
+ 8) Configure the connectors to be 10G ports. Only 1/1/c1 and 1/1/c2 are connected in this lab.
+   ```
+    /configure port 1/1/c1 connector breakout c1-10g admin-state enable
+    /configure port 1/1/c2 connector breakout c1-10g admin-state enable
+   commit
+   ```
+9) Bring the ports administratively up.
+
+    ```
+    /configure port 1/1/c1 admin-state enable
+    /configure port 1/1/c1/1 admin-state enable
+    /configure port 1/1/c2 admin-state enable
+    /configure port 1/1/c2/1 admin-state enable
+    commit
+    
+    ```
+10) The show ports command will now show 2 x 10G interfaces. Please note there will not be a link until you complete the same task on PE30.
+<img width="759" height="335" alt="image" src="https://github.com/user-attachments/assets/04e2fe80-7d80-4c82-896e-2432147a15cc" />
+
+  11) Please repeat the same task on PE30
+
+# Lab 3 Create Lag Interfaces
+
+1) The ports 1/1/c1/1 and 1/1/c2/1 are both going be using VLAN so the need to be configured to accept VLANS.
+   ```
+   /configure port 1/1/c1/1 ethernet encap-type dot1q
+    /configure port 1/1/c2/1 ethernet encap-type dot1q
+   commit
+
+   ```
+
+2) You will now see the ports are dot1q.
+      <img width="781" height="268" alt="image" src="https://github.com/user-attachments/assets/ef253a5d-954f-498f-bc6c-97aabc0e50c8" />
+
+3) Create a LAG and apply the configured interfaces to the LAG
+   ```
+   /configure lag "lag-1" admin-state enable
+    /configure lag "lag-1" encap-type dot1q
+    /configure lag "lag-1" lacp-xmit-interval fast
+    /configure lag "lag-1" lacp mode active
+    /configure lag "lag-1" lacp administrative-key 3
+    /configure lag "lag-1" port 1/1/c1/1 { }
+    /configure lag "lag-1" port 1/1/c2/1 { }
+   commit
+   ```
+
+   
+
+
+      
 At the end of the deployment process, the following table will be displayed:
 
 ```
