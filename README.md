@@ -18,7 +18,11 @@ All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and
 
 2) **Create Your Own Container Lab**
 
-If you have a Linux enviroment on your laptop or in a lab such as WSL you can use containerlab to use the same topology. 
+If you have a Linux enviroment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
+
+   1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
+   2) Install Containerlab into your enviroment
+      ```  curl -sL https://containerlab.dev/setup | sudo -E bash -s "all" ```
    
 
 The following Subjects are covered in this lab:
@@ -40,7 +44,7 @@ Disclaimer: This is not an exhaustive list of all the features and associated op
 
 # Topology
 
-This is the topology used for the lab exercised
+This is the topology used for the lab exercise.
 
 <img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/0ea3df5e-d841-45b9-9701-c57a3695194f" />
 
