@@ -213,7 +213,7 @@ commit
 
 5) Perform the same tasks on PE30
 
-   # Create Router "Base" Interfaces
+   # Lab4- Create Router "Base" Interfaces
 
 1) Create a router interface in the Base instance on PE20
 ```
@@ -257,7 +257,7 @@ commit
    <img width="576" height="173" alt="image" src="https://github.com/user-attachments/assets/0e3a8830-8d15-4b6f-9a39-87795366fb79" />
 
 
-# ISIS
+# Lab 5- Configure ISIS
 
 
 
