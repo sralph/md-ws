@@ -207,7 +207,59 @@ commit
    commit
    ```
 
+   4) Show LAG to see that are are operational. Do a "show lag detail" to see more information.
+  
+   <img width="843" height="278" alt="image" src="https://github.com/user-attachments/assets/9a02f544-2b23-45b5-b25e-f6cb745cc946" />
+
+5) Perform the same tasks on PE30
+
+   # Create Router "Base" Interfaces
+
+1) Create a router interface in the Base instance on PE20
+```
+/configure router "Base" interface "To-Pe30" admin-state enable
+/configure router "Base" interface "To-Pe30" port lag-1:200
+/configure router "Base" interface "To-Pe30" ipv4 primary address 10.10.1.1
+/configure router "Base" interface "To-Pe30" ipv4 primary prefix-length 30
+commit
+
+```
+2) Create a router interface on PE30
+```
+    /configure router "Base" interface "To-Pe20" admin-state enable
+    /configure router "Base" interface "To-Pe20" port lag-1:200
+    /configure router "Base" interface "To-Pe20" ipv4 primary address 10.10.1.2
+    /configure router "Base" interface "To-Pe20" ipv4 primary prefix-length 30
+    commit
+```
+
+3) Show router interface. This will show the router interface is up and the lag port is attached.
+
+<img width="804" height="308" alt="image" src="https://github.com/user-attachments/assets/553ebe94-926d-465d-ab73-d0bb4f47e5ed" />
+
+4) Configure the System Interface on PE20
+```
+configure router "Base" interface "system" ipv4 primary address 100.100.100.2
+/configure router "Base" interface "system" ipv4 primary prefix-length 32
+commit
+
+```
+5) Configure the System Interface on PE30
+   ```
+    /configure router "Base" interface "system" ipv4 primary address 100.100.100.2
+    /configure router "Base" interface "system" ipv4 primary prefix-length 32
+   commit
+
+   ``
+
+6) Issue the ping command to verify connectivity. Please note the system interfaces will not be reachable until a routing protocol is configured.
+
+   <img width="576" height="173" alt="image" src="https://github.com/user-attachments/assets/0e3a8830-8d15-4b6f-9a39-87795366fb79" />
+
    
+
+
+
 
 
       
