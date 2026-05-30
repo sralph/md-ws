@@ -22,7 +22,9 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
 
    1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
    2) Install Containerlab into your enviroment
-      ```  curl -sL https://containerlab.dev/setup | sudo -E bash -s "all" ```
+      ```
+      curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
+                                                                 
    
 
 The following Subjects are covered in this lab:
