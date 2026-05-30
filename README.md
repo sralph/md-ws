@@ -10,11 +10,11 @@ This page provides the basic step-by-step configuration required to configure th
 
 All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 26.3.R1. Use `show system info` command to verify your router's chassis model and software version.
 
-The following services are covered in this guide:
+The following Subjects are covered in this lab:
 
-- [Epipe](#Epipe)
-- [VPLS](#VPLS)
-- [VPRN](#VPRN)
+- [BOF Configuration](#Epipe)
+- [Card and MDA Configuration](#VPLS)
+- [Port Configuration](#VPRN)
 - [IES](#IES)
 - [EVPN-VPWS](#EVPN-VPWS)
 - [EVPN-MPLS](#EVPN-MPLS-with-Multihoming)
