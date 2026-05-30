@@ -32,7 +32,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
    5) You should the follow:
       ```
       clab inspect -a
-   <img width="1536" height="864" alt="clab inspect" src="https://github.com/user-attachments/assets/ad10e7b6-d231-4832-be09-75206fd800d3" />
+   <img width="1536" height="600" alt="clab inspect" src="https://github.com/user-attachments/assets/ad10e7b6-d231-4832-be09-75206fd800d3" />
    
    6) You can now SSH to any of the two containers using the following credentials admin/NokiaSros1!
       ```
