@@ -21,13 +21,27 @@ Information coming
 If you have a Linux enviroment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
 
    1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
-   2) Install Containerlab into your enviroment
+   2) Install Containerlab into your enviroment.
       ```
       curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
    3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
    4) Within the folder issue the following command:
       ```
       clab deploy -t 7750-SR1.yml
+
+   5) You should the follow:
+      ```
+      clab inspect -a
+   ╭──────┬────────────────────────────────┬─────────┬────────────────╮
+│ Name │           Kind/Image           │  State  │ IPv4/6 Address │
+├──────┼────────────────────────────────┼─────────┼────────────────┤
+│ pe20 │ nokia_srsim                    │ running │ 10.255.0.3     │
+│      │ localhost/nokia/srsim:25.10.R2 │         │ N/A            │
+├──────┼────────────────────────────────┼─────────┼────────────────┤
+│ pe30 │ nokia_srsim                    │ running │ 10.255.0.2     │
+│      │ localhost/nokia/srsim:25.10.R2 │         │ N/A            │
+╰──────┴────────────────────────────────┴─────────┴────────────────╯
+
       
                                                            
    
