@@ -181,13 +181,14 @@ commit
 
   11) Please repeat the same task on PE30
 
-# Lab 3 Create Lag Interfaces
+# Lab 3 Create LAG Interfaces
 
 1) The ports 1/1/c1/1 and 1/1/c2/1 are both going be using VLAN so the need to be configured to accept VLANS.
    ```
    /configure port 1/1/c1/1 ethernet encap-type dot1q
     /configure port 1/1/c2/1 ethernet encap-type dot1q
    commit
+
 
    ```
 
