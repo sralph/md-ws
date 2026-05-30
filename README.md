@@ -5,7 +5,7 @@ This page provides the basic step-by-step configuration required to configure th
 
 | Contributors | Handle |
 |---|---|
-| Mohammad Zaman | [mfzhsn](https://github.com/mfzhsn) |
+| Scott Ralph | [mfzhsn](https://github.com/mfzhsn) |
 | Saju Salahudeen | [sajusal](https://github.com/sajusal) |
 
 All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 25.7.R1. Use `show system info` command to verify your router's chassis model and software version.
