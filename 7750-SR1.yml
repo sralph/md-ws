@@ -1,0 +1,40 @@
+name: dual-Moodys
+prefix: ""
+
+mgmt:
+  network: clab
+  ipv4-subnet: 10.255.0.0/24
+
+topology:
+  defaults:
+    kind: nokia_srsim
+
+  kinds:
+    nokia_srsim:
+      image: localhost/nokia/srsim:25.10.R2
+      license: license-6.txt
+
+  nodes:
+    pe20:
+      type: sr-1
+      components:
+        - slot: A
+          mda:
+            - slot: 1
+              type: me16-25gb-sfp28+2-100gb-qsfp-b
+            - slot: 2
+              type: me6-100gb-qsfp28
+
+    pe30:
+      type: sr-1
+      components:
+        - slot: A
+          mda:
+            - slot: 1
+              type: me16-25gb-sfp28+2-100gb-qsfp-b
+            - slot: 2
+              type: me6-100gb-qsfp28
+
+  links:
+    - endpoints: ["pe20:1/1/c1/1", "pe30:1/1/c1/1"]
+    - endpoints: ["pe20:1/1/c2/1", "pe30:1/1/c2/1"]                                              
