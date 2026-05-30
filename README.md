@@ -32,16 +32,8 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
    5) You should the follow:
       ```
       clab inspect -a
-   
-╭──────┬────────────────────────────────┬─────────┬────────────────╮
-│ Name │           Kind/Image           │  State  │ IPv4/6 Address │
-├──────┼────────────────────────────────┼─────────┼────────────────┤
-│ pe20 │ nokia_srsim                    │ running │ 10.255.0.3     │
-│      │ localhost/nokia/srsim:25.10.R2 │         │ N/A            │
-├──────┼────────────────────────────────┼─────────┼────────────────┤
-│ pe30 │ nokia_srsim                    │ running │ 10.255.0.2     │
-│      │ localhost/nokia/srsim:25.10.R2 │         │ N/A            │
-╰──────┴────────────────────────────────┴─────────┴────────────────╯
+   <img width="1536" height="864" alt="clab inspect" src="https://github.com/user-attachments/assets/ad10e7b6-d231-4832-be09-75206fd800d3" />
+
 
 
       
