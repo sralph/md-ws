@@ -8,7 +8,7 @@ This page provides the basic step-by-step configuration required to configure th
 | Scott Ralph | scott.ralph@nokia.com |
 | Saju Salahudeen | [sajusal](https://github.com/sajusal) |
 
-All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 25.7.R1. Use `show system info` command to verify your router's chassis model and software version.
+All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 26.3.R1. Use `show system info` command to verify your router's chassis model and software version.
 
 The following services are covered in this guide:
 
