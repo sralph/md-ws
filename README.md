@@ -1,3 +1,4 @@
+<img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/5ce6a2c1-de26-4886-a732-ddb262db763f" />
 # md-ws
 #Nokia Workshop
 
@@ -28,6 +29,10 @@ A summary of what this guide provides is shown below.
 Disclaimer: This is not an exhaustive list of all the features and associated options on SR OS for services. This does not replace official documentation but is a one stop reference guide for basic service configuration. For more details on the features and options, please refer to the documentation links in each section.
 
 # Topology
+
+
+<img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/0ea3df5e-d841-45b9-9701-c57a3695194f" />
+
 
 We will be using the below topology with 4 Provider Edge (PE) routers, 2 Provider (P) routers and 4 Customer Edge (CE) routers.
 
