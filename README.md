@@ -11,6 +11,15 @@ This page provides the basic step-by-step configuration required to configure th
 
 All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 26.3.R1. Use `show system info` command to verify your router's chassis model and software version.
 
+# Two Options for Lab Access
+
+1) Access the Lab Remotely
+
+
+2) Create Your Own Container Lab.
+
+   
+
 The following Subjects are covered in this lab:
 
 - [BOF Configuration](#Epipe)
