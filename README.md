@@ -1,4 +1,4 @@
-<img width="1536" height="864" alt="Topology" src="https://github.com/user-attachments/assets/5ce6a2c1-de26-4886-a732-ddb262db763f" />
+
 # md-ws
 #Nokia Workshop
 
