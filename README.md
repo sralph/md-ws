@@ -80,12 +80,14 @@ IPv4 Addressing:
 
 ```
 ssh admin@pe20
+
  ```
 
 2) At the prompt enter bof configuration mode.
 
 ```bash
 bof private
+
 ```
 
 
