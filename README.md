@@ -16,7 +16,7 @@ All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and
 1) Access the Lab Remotely
 
 
-2) *Create Your Own Container Lab*
+2) -Create Your Own Container Lab_
 
 If you have a Linux enviroment on your laptop or in a lab such as WSL you can use containerlab to use the same topology. 
    
