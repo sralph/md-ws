@@ -14,7 +14,7 @@ All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and
 # Two Options for Lab Access
 
 1) Access the Lab Remotely
-
+Information coming
 
 2) **Create Your Own Container Lab**
 
@@ -24,7 +24,12 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
    2) Install Containerlab into your enviroment
       ```
       curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
-                                                                 
+   3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
+   4) Within the folder issue the following command:
+      ```
+      clab deploy -t 7750-SR1.yml
+      
+                                                           
    
 
 The following Subjects are covered in this lab:
