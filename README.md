@@ -74,6 +74,7 @@ All configuration examples shown below are for PE routers. Refer to the startup 
 <img src="./images/physical-topology.svg" width="100%"/>
 
 IPv4 Addressing:
+
 <img width="251" height="106" alt="IPAddress" src="https://github.com/user-attachments/assets/4cf76d44-9d89-4bae-aafe-9df54502f98b" />
 
 
