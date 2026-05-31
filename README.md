@@ -259,11 +259,32 @@ commit
 
 # Lab 5- Configure ISIS
 
+1) Enter into the "router" context. This is where all routing protocols are configured including ISIS.
 
+   ```
+    /configure router "Base" isis 0 { }
+   ```
+2) In the router isis context we want to set the ISIS area and interfaces that you want to advertise.
+```
+/configure router "Base" isis 0 admin-state enable
+/configure router "Base" isis 0 area-address [49.0001]
+/configure router "Base" isis 0 interface "To-Pe30" interface-type point-to-point
+/configure router "Base" isis 0 interface "system" { }
+   commit
 
+```
+3) Repeat the same steps on router PE-30.
+```
+   /configure router "Base" isis 0 admin-state enable
+    /configure router "Base" isis 0 area-address [49.0001]
+    /configure router "Base" isis 0 interface "To-Pe20" admin-state enable
+    /configure router "Base" isis 0 interface "To-Pe20" interface-type point-to-point
+    /configure router "Base" isis 0 interface "system" { }
+```
 
+4) To verify the ISIS adjanency is up and routes are being advertied enter " show router isis adjacency" 
 
-
+<img width="674" height="188" alt="image" src="https://github.com/user-attachments/assets/7d09bbe2-e215-46a8-83b9-783670fd8cb7" />
 
       
 At the end of the deployment process, the following table will be displayed:
