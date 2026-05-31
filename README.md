@@ -7,7 +7,7 @@ This page provides the basic step-by-step configuration required to configure th
 | Contributors | Handle |
 |---|---|
 | Scott Ralph | scott.ralph@nokia.com |
-| Saju Salahudeen | [sajusal](https://github.com/sajusal) |
+
 
 All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and software version is SR OS 26.3.R1. Use `show system info` command to verify your router's chassis model and software version.
 
@@ -25,11 +25,15 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
       ```
       curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
    3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
-   4) Within the folder issue the following command:
+   4) Once downloaded you need to create the container image.
+      ```
+      docker image load -i srsim.tar.xz
+      ```
+   6) Within the folder issue the following command:
       ```
       clab deploy -t 7750-SR1.yml
 
-   5) Once the lab is finished being deployed you can issue the following command if it does not already display.
+   7) Once the lab is finished being deployed you can issue the following command if it does not already display.
       ```
       clab inspect -a
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
