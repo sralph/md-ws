@@ -291,7 +291,7 @@ commit
 5) To verify that ISIS is advertising the system interface addresses.
 <img width="764" height="338" alt="image" src="https://github.com/user-attachments/assets/6fc86b4f-a8d6-49d0-b57f-9d187a0fa930" />
 
-7) To add traffic engineering capabilities that will be required for RSVP-TE lab.
+7) To add traffic engineering capabilities that will be required for RSVP-TE lab. Add the command on both PE20 and PE30
 
 ```
 /configure router "Base" isis 0 traffic-engineering true
@@ -299,10 +299,140 @@ commit
 
 ```
 
+# Lab 6- Configuring BGP
+
+1) Using the router context we will enter into BGP router context. A BGP group is mandatory and then attached to a "neighbor" statement. In this lab we will be iBGP and will use the system address to peer with. The autonomous number is added under the "router" context.
+
+   ```
+    /configure router "Base" autonomous-system 65001
+     commit
+   
+   ```
+
+   
+2) BGP configuration on PE20.
+```
+
+    /configure router "Base" bgp admin-state enable
+    /configure router "Base" bgp group "iBGP" family ipv4 true
+    /configure router "Base" bgp group "iBGP" family vpn-ipv4 true
+    /configure router "Base" bgp neighbor "100.100.100.3" group "iBGP"
+    /configure router "Base" bgp neighbor "100.100.100.3" peer-as 65001
+     commit
+```
+3) BGP Configuration on PE30.
+   ```
+   /configure router "Base" bgp admin-state enable
+    /configure router "Base" bgp group "iBGP" family ipv4 true
+    /configure router "Base" bgp group "iBGP" family vpn-ipv4 true
+    /configure router "Base" bgp neighbor "100.100.100.3" group "iBGP"
+    /configure router "Base" bgp neighbor "100.100.100.3" peer-as 65001
+   commit
+   
+   ```
+4) Verify that the BGP adjaceny is up. We see it up and both address families are not sending or receiving routes.
+       <img width="718" height="252" alt="image" src="https://github.com/user-attachments/assets/b125cd22-4248-450c-af0d-50264e9ef027" />
+
+5) The show router bgp neighbor <address> detail can show the router is Established.
+
+         <img width="657" height="543" alt="image" src="https://github.com/user-attachments/assets/386afcc8-d7da-4a78-a5e0-981e5b382108" />
+
+6) Adding three Loopback interfaces to the routers configuration.
+   PE-20
+```
+    /configure router "Base" interface "Loopback1" loopback
+    /configure router "Base" interface "Loopback1" ipv4 primary address 20.20.20.1
+    /configure router "Base" interface "Loopback1" ipv4 primary prefix-length 32
+    /configure router "Base" interface "Loopback2" loopback
+    /configure router "Base" interface "Loopback2" ipv4 primary address 20.20.30.1
+    /configure router "Base" interface "Loopback2" ipv4 primary prefix-length 32
+    /configure router "Base" interface "Loopback3" loopback
+    /configure router "Base" interface "Loopback3" ipv4 primary address 10.10.40.1
+    /configure router "Base" interface "Loopback3" ipv4 primary prefix-length 32
+    commit
+
+```
+PE-30
+```
+   /configure router "Base" interface "Loopback1" loopback
+    /configure router "Base" interface "Loopback1" ipv4 primary address 20.20.20.1
+    /configure router "Base" interface "Loopback1" ipv4 primary prefix-length 32
+    /configure router "Base" interface "Loopback2" loopback
+    /configure router "Base" interface "Loopback2" ipv4 primary address 20.20.30.1
+    /configure router "Base" interface "Loopback2" ipv4 primary prefix-length 32
+    /configure router "Base" interface "Loopback3" loopback
+    /configure router "Base" interface "Loopback3" ipv4 primary address 10.10.40.1
+    /configure router "Base" interface "Loopback3" ipv4 primary prefix-length 32
+     commit
+
+```
+7) Verify that the interfaces are up on both PE-20 and PE-30.
+
+   <img width="694" height="367" alt="image" src="https://github.com/user-attachments/assets/e9f2ba53-2c20-486c-a24c-d1718bd34fbf" />
+
+   
+8) Create the following prefix-lists and policies to advertise the Loop back interfaces into BGP.
+   PE-20
+```
+/configure policy-options prefix-list "Loopbacks" { prefix 20.20.20.1/32 type exact }
+    /configure policy-options prefix-list "Loopbacks" { prefix 20.20.30.1/32 type exact }
+    /configure policy-options prefix-list "Loopbacks" { prefix 20.20.40.1/32 type exact }
+    /configure policy-options policy-statement "Export" entry-type named
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopbacks" from prefix-list ["Loopbacks"]
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopbacks" from protocol name [direct]
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopbacks" action action-type accept
+      commit
+
+```
+PE-30
+```
+    /configure policy-options prefix-list "Loopbacks" { prefix 30.30.30.1/32 type exact }
+    /configure policy-options prefix-list "Loopbacks" { prefix 30.30.40.1/32 type exact }
+    /configure policy-options prefix-list "Loopbacks" { prefix 30.30.50.1/32 type exact }
+    /configure policy-options policy-statement "Export" entry-type named
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopback" from prefix-list ["Loopbacks"]
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopback" from protocol name [direct]
+    /configure policy-options policy-statement "Export" named-entry "BGP-Loopback" action action-type accept
+      commit
+
+```
+9) Apply the policy to the neighbor statement. Context is the same for both PE-20 and PE-30.
+
+   ```
+   /configure router "Base" bgp neighbor "100.100.100.2" export policy ["Export"]
+   ```
+
+10) Verify that the router is receiving routes and the are active in the routing table.
+       <img width="781" height="251" alt="image" src="https://github.com/user-attachments/assets/83a70df7-73a5-4dcf-bd77-41bcf140b641" />
+       <img width="763" height="534" alt="image" src="https://github.com/user-attachments/assets/6f6d5776-71ad-412f-98d4-38e50b44d1e3" />
+       <img width="799" height="473" alt="image" src="https://github.com/user-attachments/assets/b4e73775-c908-4a57-8776-63b18024aeee" />
+       <img width="711" height="470" alt="image" src="https://github.com/user-attachments/assets/ba036e96-55fb-4ebe-b663-f5fbc6b21bf3" />
+
+# RSVP-TE Configuration
+
+1) The interface to both PE routers needed to be added to the MPLS and RSVP command contexts.
+  PE-30
+   ```
+   /configure router "Base" mpls admin-state enable
+    /configure router "Base" mpls interface "To-Pe20" admin-state enable
+    /configure router "Base" rsvp admin-state enable
+    /configure router "Base" rsvp interface "To-Pe20" admin-state enable
+   commit
+
+   
+   ```
+   PE-20
+   ```
+    /configure router "Base" mpls admin-state enable
+    /configure router "Base" mpls interface "To-Pe30" admin-state enable
+    /configure router "Base" rsvp admin-state enable
+    /configure router "Base" rsvp interface "To-Pe30" admin-state enable
+   commit
+
+   ```
+3)  
 
 
-
-      
 At the end of the deployment process, the following table will be displayed:
 
 ```
