@@ -280,11 +280,27 @@ commit
     /configure router "Base" isis 0 interface "To-Pe20" admin-state enable
     /configure router "Base" isis 0 interface "To-Pe20" interface-type point-to-point
     /configure router "Base" isis 0 interface "system" { }
+     commit
+
 ```
 
-4) To verify the ISIS adjanency is up and routes are being advertied enter " show router isis adjacency" 
+4) To verify the ISIS adjanency is up and routes are being advertied enter " show router isis adjacency" .
 
 <img width="674" height="188" alt="image" src="https://github.com/user-attachments/assets/7d09bbe2-e215-46a8-83b9-783670fd8cb7" />
+
+5) To verify that ISIS is advertising the system interface addresses.
+<img width="764" height="338" alt="image" src="https://github.com/user-attachments/assets/6fc86b4f-a8d6-49d0-b57f-9d187a0fa930" />
+
+7) To add traffic engineering capabilities that will be required for RSVP-TE lab.
+
+```
+/configure router "Base" isis 0 traffic-engineering true
+commit
+
+```
+
+
+
 
       
 At the end of the deployment process, the following table will be displayed:
