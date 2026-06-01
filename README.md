@@ -20,32 +20,31 @@ Information coming
 2) **Create Your Own Container Lab**
 
 If you have a Linux environment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
-
-   1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
-   2) Install Containerlab into your environment.
+1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
+2) Install Containerlab into your environment.
       ```
       curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
       ```
-   3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
-   4) Once downloaded you need to create the container image.
+3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
+4) Once downloaded you need to create the container image.
       ```
       docker image load -i srsim.tar.xz
       ```
-   6) Within the folder issue the following command:
+6) Within the folder issue the following command:
       ```
       clab deploy -t 7750-SR1.yml
 
-   7) Once the lab is finished being deployed you can issue the following command if it does not already display.
+7) Once the lab is finished being deployed you can issue the following command if it does not already display.
       ```
       clab inspect -a
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
 
-    6) You can now SSH to the container using the following credentials  "admin/NokiaSros1!"
+ 8) You can now SSH to the container using the following credentials  "admin/NokiaSros1!"
     
       ```
       ssh admin@pe20
 
-     The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.
+9) **The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.**
                                                            
    # Workshop Lab
 
