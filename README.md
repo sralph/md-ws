@@ -49,7 +49,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
 
 The following Subjects are covered in this lab:
 
-- [Lab 1-BOF File](#lab-1-bof-file)
+- [Lab 1 BOF File](#lab-1-bof-file)
 - [Lab 2 Provisioning the Cards and MDA](#lab-2-provisioning-the-cards-and-mda)
 - [Port Configuration](#VPRN)
 - [Router Base Interface](#IES)
@@ -80,7 +80,7 @@ IPv4 Addressing:
 
 
 
-# Lab 1- BOF File
+# Lab 1 BOF File
 1) Log into the Router PE20 with username admin password NokiaSros1!
 
 ```
@@ -181,10 +181,14 @@ commit
     commit
     
     ```
+    
 10) The show ports command will now show 2 x 10G interfaces. Please note there will not be a link until you complete the same task on PE30.
+    ```
+    show port
+    ```
 <img width="759" height="335" alt="image" src="https://github.com/user-attachments/assets/04e2fe80-7d80-4c82-896e-2432147a15cc" />
 
-  11) Please repeat the same task on PE30
+  12) Please repeat the same task on PE30
 
 # Lab 3 Create LAG Interfaces
 
@@ -213,7 +217,9 @@ commit
    ```
 
    4) Show LAG to see that are are operational. Do a "show lag detail" to see more information.
-  
+  ```
+show lag detail
+```
    <img width="843" height="278" alt="image" src="https://github.com/user-attachments/assets/9a02f544-2b23-45b5-b25e-f6cb745cc946" />
 
 5) Perform the same tasks on PE30
@@ -239,7 +245,9 @@ commit
 ```
 
 3) Show router interface. This will show the router interface is up and the lag port is attached.
-
+```
+show router interface
+```
 <img width="804" height="308" alt="image" src="https://github.com/user-attachments/assets/553ebe94-926d-465d-ab73-d0bb4f47e5ed" />
 
 4) Configure the System Interface on PE20
@@ -258,6 +266,9 @@ commit
    ``
 
 6) Issue the ping command to verify connectivity. Please note the system interfaces will not be reachable until a routing protocol is configured.
+```
+ping 10.10.1.2
+```
 
    <img width="576" height="173" alt="image" src="https://github.com/user-attachments/assets/0e3a8830-8d15-4b6f-9a39-87795366fb79" />
 
@@ -290,10 +301,15 @@ commit
 ```
 
 4) To verify the ISIS adjanency is up and routes are being advertied enter " show router isis adjacency" .
-
+```
+show router isis adjacency
+```
 <img width="674" height="188" alt="image" src="https://github.com/user-attachments/assets/7d09bbe2-e215-46a8-83b9-783670fd8cb7" />
 
 5) To verify that ISIS is advertising the system interface addresses.
+```
+show router route-table
+```
 <img width="764" height="338" alt="image" src="https://github.com/user-attachments/assets/6fc86b4f-a8d6-49d0-b57f-9d187a0fa930" />
 
 7) To add traffic engineering capabilities that will be required for RSVP-TE lab. Add the command on both PE20 and PE30
@@ -336,13 +352,17 @@ commit
    
    ```
 4) Verify that the BGP adjaceny is up. We see it up and both address families are not sending or receiving routes.
-       <img width="718" height="252" alt="image" src="https://github.com/user-attachments/assets/b125cd22-4248-450c-af0d-50264e9ef027" />
+```
+show router bgp summary all
+```
 
-5) The show router bgp neighbor <address> detail can show the router is Established.
+<img width="718" height="252" alt="image" src="https://github.com/user-attachments/assets/b125cd22-4248-450c-af0d-50264e9ef027" />
 
-         <img width="657" height="543" alt="image" src="https://github.com/user-attachments/assets/386afcc8-d7da-4a78-a5e0-981e5b382108" />
+6) The show router bgp neighbor <address> detail can show the router is Established. 
 
-6) Adding three Loopback interfaces to the routers configuration.
+<img width="657" height="543" alt="image" src="https://github.com/user-attachments/assets/386afcc8-d7da-4a78-a5e0-981e5b382108" />
+
+7) Adding three Loopback interfaces to the routers configuration.
    PE-20
 ```
     /configure router "Base" interface "Loopback1" loopback
@@ -372,11 +392,14 @@ PE-30
 
 ```
 7) Verify that the interfaces are up on both PE-20 and PE-30.
+```
+show router interface
+```
 
    <img width="694" height="367" alt="image" src="https://github.com/user-attachments/assets/e9f2ba53-2c20-486c-a24c-d1718bd34fbf" />
 
    
-8) Create the following prefix-lists and policies to advertise the Loop back interfaces into BGP.
+9) Create the following prefix-lists and policies to advertise the Loop back interfaces into BGP.
    PE-20
 ```
 /configure policy-options prefix-list "Loopbacks" { prefix 20.20.20.1/32 type exact }
