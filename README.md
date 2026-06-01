@@ -44,7 +44,8 @@ If you have a Linux environment on your laptop or in a lab such as WSL you can u
     
       ```
       ssh admin@pe20
-      
+
+     The SR-SIM User Guide is available under files.
                                                            
    # Workshop Lab
 
