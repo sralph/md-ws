@@ -80,7 +80,8 @@ This is the topology used for the lab exercise.
 
 IPv4 Addressing:
 
-<img width="251" height="106" alt="IPAddress" src="https://github.com/user-attachments/assets/4cf76d44-9d89-4bae-aafe-9df54502f98b" />
+<img width="298" height="104" alt="image" src="https://github.com/user-attachments/assets/6c9eef4e-dfb6-45bc-8ee0-1bcd1868e05a" />
+
 
 
 
