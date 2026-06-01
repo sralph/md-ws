@@ -45,7 +45,7 @@ If you have a Linux environment on your laptop or in a lab such as WSL you can u
       ```
       ssh admin@pe20
 
-     The SR-SIM User Guide is available under files.
+     The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.
                                                            
    # Workshop Lab
 
