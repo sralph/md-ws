@@ -4,7 +4,7 @@
 
 This page provides the basic step-by-step configuration required to configure the 7750 SR-1 Router.
 
-| Contributors | Handle |
+| Contributors | email |
 |---|---|
 | Scott Ralph | scott.ralph@nokia.com |
 
