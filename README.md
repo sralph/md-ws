@@ -369,7 +369,10 @@ show router bgp summary all
 
 <img width="718" height="252" alt="image" src="https://github.com/user-attachments/assets/b125cd22-4248-450c-af0d-50264e9ef027" />
 
-6) The show router bgp neighbor <address> detail can show the router is Established. 
+6) The show router bgp neighbor <address> detail can show the router is Established.
+```
+show router bgp neighbor 100.100.100.2 detail
+```
 
 <img width="657" height="543" alt="image" src="https://github.com/user-attachments/assets/386afcc8-d7da-4a78-a5e0-981e5b382108" />
 
@@ -442,9 +445,29 @@ PE-30
    ```
 
 10) Verify that the router is receiving routes and the are active in the routing table.
+    ```
+    show router bgp summary all
+    ```
+    
        <img width="781" height="251" alt="image" src="https://github.com/user-attachments/assets/83a70df7-73a5-4dcf-bd77-41bcf140b641" />
+       
+    ```
+    show router router-table
+    ```
+    
        <img width="763" height="534" alt="image" src="https://github.com/user-attachments/assets/6f6d5776-71ad-412f-98d4-38e50b44d1e3" />
+       
+    ```
+    show router bgp neighbor 100.100.100.2 advertised-routes
+    ```
+    
        <img width="799" height="473" alt="image" src="https://github.com/user-attachments/assets/b4e73775-c908-4a57-8776-63b18024aeee" />
+       
+    ```
+    show router bgp neighbor 100.100.100.2 recieved-routes
+    
+    ```
+    
        <img width="711" height="470" alt="image" src="https://github.com/user-attachments/assets/ba036e96-55fb-4ebe-b663-f5fbc6b21bf3" />
 
 # Lab 7 RSVP-TE Configuration
@@ -498,7 +521,15 @@ PE-30
 ```
 
 4) Verify the LSP is up and operational.
+```
+show router mpls lsp
+```
 <img width="672" height="217" alt="image" src="https://github.com/user-attachments/assets/0f2a6629-033c-423d-8fda-4abc038a045b" />
+
+```
+show router mpls lsp detail
+```
+
 <img width="662" height="544" alt="image" src="https://github.com/user-attachments/assets/90fa8772-8c61-4944-8f1a-955da43cd57a" />
 
 
