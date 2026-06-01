@@ -19,12 +19,13 @@ Information coming
 
 2) **Create Your Own Container Lab**
 
-If you have a Linux enviroment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
+If you have a Linux environment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
 
    1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
-   2) Install Containerlab into your enviroment.
+   2) Install Containerlab into your environment.
       ```
       curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
+      ```
    3) Download the 7750-SR1.yml , SR-SIM image, and license.txt file into a folder.
    4) Once downloaded you need to create the container image.
       ```
@@ -39,7 +40,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
       clab inspect -a
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
 
-    6) You can now SSH to the container using the following credetials "admin/NokiaSros1!"
+    6) You can now SSH to the container using the following credentials  "admin/NokiaSros1!"
     
       ```
       ssh admin@pe20
@@ -103,6 +104,8 @@ bof private
 ```bash
 dns primary-server 8.8.8.8
 commit
+
+
 
  ```                      
 4) Check to make the BOF file has been updated0
@@ -174,6 +177,8 @@ commit
     /configure port 1/1/c1 connector breakout c1-10g 
     /configure port 1/1/c2 connector breakout c1-10g 
    commit
+
+
    ```
 9) Bring the ports administratively up.
 
@@ -196,7 +201,7 @@ commit
 
 # Lab 3 Create LAG Interfaces
 
-1) The ports 1/1/c1/1 and 1/1/c2/1 are both going be using VLAN so the need to be configured to accept VLANS.
+1) The ports 1/1/c1/1 and 1/1/c2/1 will both be using VLAN so the need to be configured to accept VLANS.
    ```
    /configure port 1/1/c1/1 ethernet encap-type dot1q
     /configure port 1/1/c2/1 ethernet encap-type dot1q
@@ -304,7 +309,7 @@ ping 10.10.1.2
 
 ```
 
-4) To verify the ISIS adjanency is up and routes are being advertied enter " show router isis adjacency" .
+4) To verify the ISIS adjacency is up and routes are being advertised enter " show router isis adjacency" .
 ```
 show router isis adjacency
 ```
@@ -326,7 +331,7 @@ commit
 
 # Lab 6 Configuring BGP
 
-1) Using the router context we will enter into BGP router context. A BGP group is mandatory and then attached to a "neighbor" statement. In this lab we will be iBGP and will use the system address to peer with. The autonomous number is added under the "router" context.
+1) Using the router context we will enter BGP router context. A BGP group is mandatory and then attached to a "neighbor" statement. In this lab we will be iBGP and will use the system address to peer with. The autonomous number is added under the "router" context.
 
    ```
     /configure router "Base" autonomous-system 65001
@@ -355,7 +360,7 @@ commit
    commit
    
    ```
-4) Verify that the BGP adjaceny is up. We see it up and both address families are not sending or receiving routes.
+4) Verify that the BGP is established. It is up and both address families are not sending or receiving routes.
 ```
 show router bgp summary all
 ```
