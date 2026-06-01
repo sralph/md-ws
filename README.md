@@ -58,6 +58,7 @@ The following Subjects are covered in this lab:
 - [Lab 6 Configuring BGP](#lab-6-configuring-bgp)
 - [Lab 7 RSVP-TE Configuration](#lab-7-rsvp-te-configuration)
 - [Lab 8 VPRN Configuration](#lab-8-vprn-configuration)
+- [Lab 9 IP Filter](#lab-9-ip-filter)
 
 A list of [show commands](#show-commands) is also provided in this guide.
 
@@ -597,7 +598,81 @@ PE-20
    
    <img width="697" height="454" alt="image" src="https://github.com/user-attachments/assets/ae2391a9-fbeb-4f26-b80e-03f283ef9f14" />
 
-   
+# Lab 9 IP Filter
+
+1) Create an IP Filter on PE20 that will drop ICMP traffic from the direct interface of 10.10.1.2, but allow all other ICMP traffic.
+```
+    /configure filter ip-filter "ACL" default-action accept
+    /configure filter ip-filter "ACL" filter-id 10
+    /configure filter ip-filter "ACL" entry 1 log 102
+    /configure filter ip-filter "ACL" entry 1 match protocol icmp
+    /configure filter ip-filter "ACL" entry 1 match src-ip address 100.100.100.3
+    /configure filter ip-filter "ACL" entry 1 match src-ip mask 255.255.255.252
+    /configure filter ip-filter "ACL" entry 1 action accept
+    /configure filter ip-filter "ACL" entry 2 match protocol icmp
+    /configure filter ip-filter "ACL" entry 2 action drop
+     commit
+
+```
+2) Apply the ip-filter to the interface To-PE30 on ingress.
+
+```
+ /configure router "Base" interface "To-Pe30" ingress filter ip "ACL"
+  commit
+
+```
+3) Configure a filter log to log the packets that match the ip-filter.
+```
+/configure filter log 102 { }
+```
+
+5) Log in to PE30 and send a ping. By default it will use the IP address of the out going interface as the source.
+
+```
+    ping 10.10.1.1
+```
+
+The ping fails
+
+
+<img width="751" height="142" alt="icmptimeout_" src="https://github.com/user-attachments/assets/f33da47e-4aec-4ae1-a901-673b01562a86" />
+
+
+
+
+
+5) Ping 10.10.1.1 but source it from the system address.
+```
+ping 10.10.1.1 source-address 100.100.100.3
+
+```
+
+The ping is successful
+
+<img width="589" height="141" alt="image" src="https://github.com/user-attachments/assets/53ededde-8c1c-47e1-8790-8faf27f6960e" />
+
+6) Log in to PE20 and check the ip-filter counters.
+```
+show filter ip ACL counters
+```
+<img width="600" height="439" alt="image" src="https://github.com/user-attachments/assets/bf0f077d-3397-436f-8083-173e607e78ba" />
+
+7) Check the filter logs
+```
+show filter log 102
+
+```
+
+
+<img width="596" height="415" alt="image" src="https://github.com/user-attachments/assets/aaf69578-1167-43d4-9d8c-5a3eac9b6ede" />
+
+
+
+
+
+
+
+
 # End of Labs
 
    
