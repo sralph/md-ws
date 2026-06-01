@@ -13,7 +13,8 @@ All configurations are in MD-CLI flat format. Reference chassis is 7750 SR-1 and
 
 # Two Options for Lab Access
 
-1) Access the Lab Remotely
+1) **Access the Lab Remotely**
+
 Information coming
 
 2) **Create Your Own Container Lab**
@@ -38,7 +39,7 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
       clab inspect -a
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
 
-    6) You can now SSH to the container using the following credetials admin/NokiaSros1!
+    6) You can now SSH to the container using the following credetials "admin/NokiaSros1!"
     
       ```
       ssh admin@pe20
@@ -48,8 +49,8 @@ If you have a Linux enviroment on your laptop or in a lab such as WSL you can us
 
 The following Subjects are covered in this lab:
 
-- [BOF Configuration](#Epipe)
-- [Card and MDA Configuration](#VPLS)
+- [Lab 1-BOF File](#lab-1-bof-file)
+- [Lab 2 Provisioning the Cards and MDA](#lab-2-provisioning-the-cards-and-mda)
 - [Port Configuration](#VPRN)
 - [Router Base Interface](#IES)
 - [ISIS ](#EVPN-VPWS)
