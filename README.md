@@ -71,7 +71,8 @@ Disclaimer: This is not an exhaustive list of all the features and associated op
 
 This is the topology used for the lab exercise.
 
-<img width="1486" height="224" alt="Topology" src="https://github.com/user-attachments/assets/c38d9e5f-9b35-401d-96da-b488d90e3325" />
+<img width="2033" height="329" alt="image" src="https://github.com/user-attachments/assets/befdf0fc-0d7c-4660-a851-575150721da5" />
+
 
 
 
