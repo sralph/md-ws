@@ -51,10 +51,12 @@ The following Subjects are covered in this lab:
 
 - [Lab 1 BOF File](#lab-1-bof-file)
 - [Lab 2 Provisioning the Cards and MDA](#lab-2-provisioning-the-cards-and-mda)
-- [Port Configuration](#VPRN)
-- [Router Base Interface](#IES)
-- [ISIS ](#EVPN-VPWS)
-- [BGP](#EVPN-MPLS-with-Multihoming)
+- [Lab 3 Create LAG Interfaces](#lab-3-create-lag-interfaces)
+- [Lab 4 Create Router "Base" Interfaces](#lab-4-create-router-base-interfaces)
+- [Lab 5 Configure ISIS ](#lab-5-configure-isis)
+- [Lab 6 Configuring BGP](#lab-6-configuring-bgp)
+- [Lab 7 RSVP-TE Configuration](#lab-7-rsvp-te-configuration)
+- [Lab 8 VPRN Configuration](#lab-8-vprn-configuration)
 
 A list of [show commands](#show-commands) is also provided in this guide.
 
@@ -159,16 +161,18 @@ commit
    commit
    
 ```
-6) You should now see the MDA up.
+6) The MDA is now up.
+   
    <img width="807" height="194" alt="image" src="https://github.com/user-attachments/assets/dcd53444-13ae-40ca-871a-acc8738a42a1" />
 
- 7) The ports can now be viewed.
+ 8) The ports can now be viewed.
+    
       <img width="733" height="667" alt="image" src="https://github.com/user-attachments/assets/64314dad-34d5-447a-bb99-6d4c22dffc8a" />
 
- 8) Configure the connectors to be 10G ports. Only 1/1/c1 and 1/1/c2 are connected in this lab.
+ 10) Configure the connectors to be 10G ports. Only 1/1/c1 and 1/1/c2 are connected in this lab.
    ```
-    /configure port 1/1/c1 connector breakout c1-10g admin-state enable
-    /configure port 1/1/c2 connector breakout c1-10g admin-state enable
+    /configure port 1/1/c1 connector breakout c1-10g 
+    /configure port 1/1/c2 connector breakout c1-10g 
    commit
    ```
 9) Bring the ports administratively up.
@@ -224,7 +228,7 @@ show lag detail
 
 5) Perform the same tasks on PE30
 
-   # Lab4- Create Router "Base" Interfaces
+   # Lab 4 Create Router "Base" Interfaces
 
 1) Create a router interface in the Base instance on PE20
 ```
@@ -273,7 +277,7 @@ ping 10.10.1.2
    <img width="576" height="173" alt="image" src="https://github.com/user-attachments/assets/0e3a8830-8d15-4b6f-9a39-87795366fb79" />
 
 
-# Lab 5- Configure ISIS
+# Lab 5 Configure ISIS
 
 1) Enter into the "router" context. This is where all routing protocols are configured including ISIS.
 
@@ -320,7 +324,7 @@ commit
 
 ```
 
-# Lab 6- Configuring BGP
+# Lab 6 Configuring BGP
 
 1) Using the router context we will enter into BGP router context. A BGP group is mandatory and then attached to a "neighbor" statement. In this lab we will be iBGP and will use the system address to peer with. The autonomous number is added under the "router" context.
 
@@ -436,7 +440,7 @@ PE-30
        <img width="799" height="473" alt="image" src="https://github.com/user-attachments/assets/b4e73775-c908-4a57-8776-63b18024aeee" />
        <img width="711" height="470" alt="image" src="https://github.com/user-attachments/assets/ba036e96-55fb-4ebe-b663-f5fbc6b21bf3" />
 
-# RSVP-TE Configuration
+# Lab 7 RSVP-TE Configuration
 
 1) The interface to both PE routers needed to be added to the MPLS and RSVP command contexts.
   PE-30
@@ -491,7 +495,7 @@ PE-30
 <img width="662" height="544" alt="image" src="https://github.com/user-attachments/assets/90fa8772-8c61-4944-8f1a-955da43cd57a" />
 
 
-# Lab 7-VPRN-Configuration 
+# Lab 8 VPRN Configuration 
 
 1) Configure a VPRN instance named "OPEN" with a service-id of 200 with 3 x Loopback Interfaces in the VPRN instance. The vrf-targe will be 100:10 with unique route-distinguishers.
 
