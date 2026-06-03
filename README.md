@@ -30,7 +30,7 @@ sudo docker image load -i srsim.tar.xz
 ```
 4) Return to the home folder and clone the github md-ws.
 ```
-cd..
+cd ..
 ```
 
 ```
