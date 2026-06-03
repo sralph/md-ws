@@ -15,9 +15,32 @@ All configurations are in MD-CLI info full-context. Reference chassis is 7750 SR
 
 1) **Access the Lab Remotely**
 
-Information coming
+1) dd
+2) Install Containerlab on the server.
+```
+sudo curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
+```
+3) Enter the images folder and enter the command to install the image.
+```
+sudo docker image load -i srsim.tar.xz
+```
+4) clone the github md-ws.
+```
+sudo git clone https://github.com/sralph/md-ws
+```
+5) Enter the directory ms-ws and then deploy the 7750-SR1.yml file
+```
+sudo clab deploy -t 7750-SR1.yml
+```
+6) ssh to both containers pe20 and pe30 to make sure they are working.
+```
+ssh admin@pe20
 
-2) **Create Your Own Container Lab**
+```
+If username and password is needed admin/NokiaSros1!
+
+
+1) **Create Your Own Container Lab**
 
 If you have a Linux environment on your laptop or in a lab such as WSL you can use containerlab to use the same topology used for this lab.
 1) Have a Linux Enviroment- https://learn.microsoft.com/en-us/windows/wsl/install (Optional)
