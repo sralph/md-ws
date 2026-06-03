@@ -22,13 +22,23 @@ sudo curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
 ```
 3) Enter the images folder and enter the command to install the image.
 ```
+cd images
+```
+```
 sudo docker image load -i srsim.tar.xz
 ```
-4) clone the github md-ws.
+4) Return to the home folder and clone the github md-ws.
+```
+cd..
+```
+
 ```
 sudo git clone https://github.com/sralph/md-ws
 ```
 5) Enter the directory ms-ws and then deploy the 7750-SR1.yml file
+```
+cd md-ws
+```
 ```
 sudo clab deploy -t 7750-SR1.yml
 ```
