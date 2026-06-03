@@ -170,10 +170,12 @@ show mda
 
 ```
 You show get a similar output
+
 <img width="926" height="539" alt="image" src="https://github.com/user-attachments/assets/f821229b-a8cf-406e-bc46-ca93320a07cf" />
 
 * Please note that because this is an SR-SIM the IOM is provisioned automatically.
 
+*************configure global *****************
 2)   Configure the IOM.
    ```
 /configure card 1 card-type iom-1
