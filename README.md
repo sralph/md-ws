@@ -48,7 +48,6 @@ sudo clab deploy -t 7750-SR1.yml
 ssh admin@pe20
 
 7) Exit the BOF configuration.
-
 ```
 exit
 ```
