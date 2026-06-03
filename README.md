@@ -305,14 +305,14 @@ show router interface
 
 4) Configure the System Interface on PE20
 ```
-configure router "Base" interface "system" ipv4 primary address 100.100.100.2
+/configure router "Base" interface "system" ipv4 primary address 100.100.100.2
 /configure router "Base" interface "system" ipv4 primary prefix-length 32
 commit
 
 ```
 5) Configure the System Interface on PE30
    ```
-    /configure router "Base" interface "system" ipv4 primary address 100.100.100.2
+    /configure router "Base" interface "system" ipv4 primary address 100.100.100.3
     /configure router "Base" interface "system" ipv4 primary prefix-length 32
    commit
 
