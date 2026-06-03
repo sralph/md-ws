@@ -475,9 +475,9 @@ show router interface
 ```
 PE-30
 ```
+    /configure policy-options prefix-list "Loopbacks" { prefix 30.30.20.1/32 type exact }
     /configure policy-options prefix-list "Loopbacks" { prefix 30.30.30.1/32 type exact }
     /configure policy-options prefix-list "Loopbacks" { prefix 30.30.40.1/32 type exact }
-    /configure policy-options prefix-list "Loopbacks" { prefix 30.30.50.1/32 type exact }
     /configure policy-options policy-statement "Export" entry-type named
     /configure policy-options policy-statement "Export" named-entry "BGP-Loopback" from prefix-list ["Loopbacks"]
     /configure policy-options policy-statement "Export" named-entry "BGP-Loopback" from protocol name [direct]
