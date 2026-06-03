@@ -433,7 +433,7 @@ show router bgp neighbor 100.100.100.2 detail
     /configure router "Base" interface "Loopback2" ipv4 primary address 20.20.30.1
     /configure router "Base" interface "Loopback2" ipv4 primary prefix-length 32
     /configure router "Base" interface "Loopback3" loopback
-    /configure router "Base" interface "Loopback3" ipv4 primary address 10.10.40.1
+    /configure router "Base" interface "Loopback3" ipv4 primary address 20.20.40.1
     /configure router "Base" interface "Loopback3" ipv4 primary prefix-length 32
     commit
 
@@ -441,13 +441,13 @@ show router bgp neighbor 100.100.100.2 detail
 PE-30
 ```
    /configure router "Base" interface "Loopback1" loopback
-    /configure router "Base" interface "Loopback1" ipv4 primary address 20.20.20.1
+    /configure router "Base" interface "Loopback1" ipv4 primary address 30.30.20.1
     /configure router "Base" interface "Loopback1" ipv4 primary prefix-length 32
     /configure router "Base" interface "Loopback2" loopback
-    /configure router "Base" interface "Loopback2" ipv4 primary address 20.20.30.1
+    /configure router "Base" interface "Loopback2" ipv4 primary address 30.30.30.1
     /configure router "Base" interface "Loopback2" ipv4 primary prefix-length 32
     /configure router "Base" interface "Loopback3" loopback
-    /configure router "Base" interface "Loopback3" ipv4 primary address 10.10.40.1
+    /configure router "Base" interface "Loopback3" ipv4 primary address 30.30.40.1
     /configure router "Base" interface "Loopback3" ipv4 primary prefix-length 32
      commit
 
