@@ -15,7 +15,7 @@ All configurations are in MD-CLI info full-context. Reference chassis is 7750 SR
 
 1) **Access the Lab Remotely**
 
-1) Users will SSH to their assigned user number=X. ssh **X.workshop.net** and the username and password will be **nokiauser/Nokia@W22*
+1) Users will SSH to their assigned user number=X. ssh **X.workshop.net** and the username and password will be **nokiauser/Nokia@W22**
    
 3) Install Containerlab on the server.
 ```
