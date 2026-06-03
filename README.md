@@ -295,6 +295,7 @@ commit
     /configure router "Base" interface "To-Pe20" ipv4 primary address 10.10.1.2
     /configure router "Base" interface "To-Pe20" ipv4 primary prefix-length 30
     commit
+
 ```
 
 3) Show router interface. This will show the router interface is up and the lag port is attached.
@@ -316,7 +317,7 @@ commit
     /configure router "Base" interface "system" ipv4 primary prefix-length 32
    commit
 
-   ``
+   ```
 
 6) Issue the ping command to verify connectivity. Please note the system interfaces will not be reachable until a routing protocol is configured.
 ```
