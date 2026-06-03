@@ -76,8 +76,9 @@ If you have a Linux environment on your laptop or in a lab such as WSL you can u
 
  8) You can now SSH to the container using the following credentials  "admin/NokiaSros1!"
     
-      ```
+```
       ssh admin@pe20
+```
 
 9) **The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.**
                                                            
