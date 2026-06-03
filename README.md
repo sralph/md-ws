@@ -162,6 +162,8 @@ info flat
    
 # Lab 2 Provisioning the Cards and MDA
 
+Please enter  **configure global** to enter all the commands.
+
 1) On PE20 issue the commands to display the state of the cards and MDA.
 
 ```
@@ -175,7 +177,7 @@ You show get a similar output
 
 * Please note that because this is an SR-SIM the IOM is provisioned automatically.
 
-   Please enter  **configure global**
+   
 
 
 2)   Configure the IOM.
