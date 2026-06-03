@@ -404,8 +404,8 @@ commit
    /configure router "Base" bgp admin-state enable
     /configure router "Base" bgp group "iBGP" family ipv4 true
     /configure router "Base" bgp group "iBGP" family vpn-ipv4 true
-    /configure router "Base" bgp neighbor "100.100.100.3" group "iBGP"
-    /configure router "Base" bgp neighbor "100.100.100.3" peer-as 65001
+    /configure router "Base" bgp neighbor "100.100.100.2" group "iBGP"
+    /configure router "Base" bgp neighbor "100.100.100.2" peer-as 65001
    commit
    
    ```
