@@ -9,13 +9,13 @@ This page provides the basic step-by-step configuration required to configure th
 | Scott Ralph | scott.ralph@nokia.com |
 
 
-All configurations are in MD-CLI info full-context. Reference chassis is 7750 SR-1 and software version is SR OS 26.3.R1. Use `show system info` command to verify your router's chassis model and software version.
+All configurations are in MD-CLI info full-context. Reference chassis is 7750 SR-1 and software version is SR OS 25.10.R2 Use `show system info` command to verify your router's chassis model and software version.
 
 # Two Options for Lab Access
 
 1) **Access the Lab Remotely**
 
-1) Users will SSH to their assigned user number=X. ssh X.workshop.net and the username and password will be nokiauser/Nokia@W22
+1) Users will SSH to their assigned user number=X. ssh **X.workshop.net** and the username and password will be nokiauser/Nokia@W22
    
 3) Install Containerlab on the server.
 ```
