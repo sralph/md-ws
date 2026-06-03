@@ -68,11 +68,11 @@ If you have a Linux environment on your laptop or in a lab such as WSL you can u
       docker image load -i srsim.tar.xz
       ```
 6) Within the folder issue the following command:
-      ```
+   ```
       clab deploy -t 7750-SR1.yml
 
 7) Once the lab is finished being deployed you can issue the following command if it does not already display.
-      ```
+   ```
       clab inspect -a
 ```
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
