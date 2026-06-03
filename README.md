@@ -46,6 +46,8 @@ sudo clab deploy -t 7750-SR1.yml
 6) ssh to both containers pe20 and pe30 to make sure they are working.
 ```
 ssh admin@pe20
+```
+
 
 7) Exit the BOF configuration.
 
