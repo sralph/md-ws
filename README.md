@@ -175,7 +175,9 @@ You show get a similar output
 
 * Please note that because this is an SR-SIM the IOM is provisioned automatically.
 
-*************configure global *****************
+   Please enter  **configure global**
+
+
 2)   Configure the IOM.
    ```
 /configure card 1 card-type iom-1
