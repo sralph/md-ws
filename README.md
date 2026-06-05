@@ -72,20 +72,27 @@ If you have a Linux environment on your laptop or in a lab such as WSL you can u
       clab deploy -t 7750-SR1.yml
 
 7) Once the lab is finished being deployed you can issue the following command if it does not already display.
-   ```
+```
       clab inspect -a
 ```
+
 <img width="544" height="129" alt="clab inspect" src="https://github.com/user-attachments/assets/fe526cb7-8db6-417b-a0c7-297218b2a76e" />
 
  8) You can now SSH to the container using the following credentials  "admin/NokiaSros1!"
+
+
     
 ```
       ssh admin@pe20
+
 ```
 
-9) **The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.**
-                                                           
-   # Workshop LaB
+
+      
+9)  **The SR-SIM User Guide, license-6.txt, and 7750-SR1.yml is available under Files.**
+
+                                     
+   # Workshop Lab
 
 The following Subjects are covered in this lab:
 
